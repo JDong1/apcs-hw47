@@ -3,8 +3,8 @@ public class Ball {
   double vy;
   double px;
   double py;
-  
-public Ball(double vx, double vy, double px, double py) {
+
+  public Ball(double px, double py, double vx, double vy) {
     this.vx = vx;
     this.vy = vy;
     this.px = px;
@@ -17,12 +17,16 @@ public Ball(double vx, double vy, double px, double py) {
   }
   
   public void tick() {
+    bounce();
     inertia();
-     bounce();
   }
   
   public void bounce() {
-      if (px<=0 || px>=width) { vx *= -1; }
-      if (py<=0 || px>=height) { vy *= -1; }
-    }
+    if (px<=0 || px>=width) { vx *= -1; }
+    if (py<=0 || py>=height) { vy *= -1; }
+  }
+
+  public void draw() {
+    ellipse((float) px, (float) py, 10.0, 10.0);
+  }
 }
