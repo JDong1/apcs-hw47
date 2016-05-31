@@ -1,8 +1,8 @@
 public class Ball {
-  double vx;
-  double vy;
-  double px;
-  double py;
+  private double px;
+  private double py;
+  private double vx;
+  private double vy;
 
   public Ball(double px, double py, double vx, double vy) {
     this.vx = vx;
@@ -27,6 +27,8 @@ public class Ball {
   }
 
   public void draw() {
+    fill(color(255,0,0));
+    stroke(color(255,0,0));
     ellipse((float) px, (float) py, 10.0, 10.0);
   }
 }
