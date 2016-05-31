@@ -3,12 +3,14 @@ public class Ball {
   private double py;
   private double vx;
   private double vy;
+  private Color clr;
 
   public Ball(double px, double py, double vx, double vy) {
     this.vx = vx;
     this.vy = vy;
     this.px = px;
     this.py = py;
+    clr = color(random(0,255),random(0,255),random(0,255));
   }
   
   public void inertia() {
@@ -27,8 +29,8 @@ public class Ball {
   }
 
   public void draw() {
-    fill(color(255,0,0));
-    stroke(color(255,0,0));
+    fill(clr);
+    stroke(clr);
     ellipse((float) px, (float) py, 10.0, 10.0);
   }
 }
